@@ -1,0 +1,735 @@
+{
+  "meta": {
+    "reportType": "enterpriseApplicationDependencies",
+    "createdAt": "2026-08-27T08:03:53.9666393Z",
+    "activityDays": 30,
+    "activityStartTime": "2026-07-28T08:03:38.4871783Z",
+    "maxActivityRecords": 5000,
+    "signInUser": "",
+    "maxUserSignInRecords": 5000,
+    "logAnalyticsWorkspaceId": "",
+    "maxBlobReadRecords": 5000,
+    "blobReadOperationNames": [
+      "GetBlob",
+      "PutBlob",
+      "PutBlock",
+      "PutBlockList",
+      "AppendBlock",
+      "CopyBlob"
+    ],
+    "activitySkipped": false,
+    "requestedSubscriptions": [
+      "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2"
+    ],
+    "ownerTagConfiguration": {
+      "userOwnerTagNames": [
+        "userOwner",
+        "technicalOwner",
+        "businessOwner"
+      ],
+      "groupOwnerTagNames": [
+        "groupOwner",
+        "ownerGroup",
+        "teamOwner",
+        "team"
+      ],
+      "tagOwnerTagNames": [
+        "owner",
+        "serviceOwner",
+        "appOwner",
+        "applicationOwner",
+        "productOwner",
+        "ownedBy",
+        "costCenter",
+        "costCentre",
+        "cost-center",
+        "cost_center"
+      ]
+    }
+  },
+  "enterpriseApplication": {
+    "objectId": "8aa615cc-851c-47cf-9faf-3a20f250438a",
+    "applicationObjectId": null,
+    "appId": "76887bd8-6132-4f6f-8cbc-3deb48039aa0",
+    "displayName": "super-learning-api-dev",
+    "appDisplayName": "",
+    "servicePrincipalType": "ManagedIdentity",
+    "publisherName": "",
+    "accountEnabled": true,
+    "appOwnerOrganizationId": "",
+    "homepage": "",
+    "loginUrl": "",
+    "replyUrls": [],
+    "servicePrincipalNames": [
+      "76887bd8-6132-4f6f-8cbc-3deb48039aa0",
+      "https://identity.azure.net/b71RKoV7/WFWaYO2OAudTZnyjGuNifoDqeDoEepwXEI="
+    ],
+    "tags": []
+  },
+  "summary": {
+    "azureSubscriptions": 1,
+    "azureRoleAssignments": 4,
+    "azureDependencyScopes": 4,
+    "azureActivityRecords": 0,
+    "azureRbacScopeActivityRecords": 6,
+    "azureRbacScopeActivityCallers": 1,
+    "azureActivityLogDiagnosticSettings": 1,
+    "azureActivityLogAnalyticsDiagnostics": 1,
+    "azureStorageAccountsWithRbac": 4,
+    "azureStorageAccountsWithDiagnosticLogs": 4,
+    "azureStorageAccountsWithLogAnalyticsDiagnostics": 4,
+    "azureBlobReadRecords": 0,
+    "azureBlobReadCallers": 0,
+    "azureBlobReadObjects": 0,
+    "graphAppRoleAssignments": 0,
+    "graphDelegatedPermissionGrants": 0,
+    "graphGroupMemberships": 0,
+    "graphResourceServicePrincipals": 0,
+    "graphUserSignIns": 0,
+    "owners": 0
+  },
+  "azure": {
+    "subscriptions": [
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "tenantId": "655ccf7b-6f5b-4110-86e3-45c4b8ffc39a"
+      }
+    ],
+    "roleAssignments": [
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "roleAssignmentId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-chrome-plugin-ENV/providers/Microsoft.Storage/storageAccounts/superlearningcrx/providers/Microsoft.Authorization/roleAssignments/5c38d3f3-4504-5383-a733-e89bafe4f5c0",
+        "scope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-chrome-plugin-ENV/providers/Microsoft.Storage/storageAccounts/superlearningcrx",
+        "principalId": "8aa615cc-851c-47cf-9faf-3a20f250438a",
+        "principalType": "ServicePrincipal",
+        "principalDisplayName": "super-learning-api-dev",
+        "roleDefinitionId": "2a2b9908-6ea1-4ae2-8e65-a410df84e7d1",
+        "roleDefinitionName": "Storage Blob Data Reader",
+        "isStorageDataReadRole": true,
+        "condition": "",
+        "conditionVersion": ""
+      },
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "roleAssignmentId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-chrome-plugin-env/providers/Microsoft.Storage/storageAccounts/superlearningcrxenv/providers/Microsoft.Authorization/roleAssignments/307fc91b-556d-52d5-b9c1-f92987aee490",
+        "scope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-chrome-plugin-env/providers/Microsoft.Storage/storageAccounts/superlearningcrxenv",
+        "principalId": "8aa615cc-851c-47cf-9faf-3a20f250438a",
+        "principalType": "ServicePrincipal",
+        "principalDisplayName": "super-learning-api-dev",
+        "roleDefinitionId": "2a2b9908-6ea1-4ae2-8e65-a410df84e7d1",
+        "roleDefinitionName": "Storage Blob Data Reader",
+        "isStorageDataReadRole": true,
+        "condition": "",
+        "conditionVersion": ""
+      },
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "roleAssignmentId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc/providers/Microsoft.Authorization/roleAssignments/252751ce-8e21-5766-b9fd-f8bff95cb5a8",
+        "scope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+        "principalId": "8aa615cc-851c-47cf-9faf-3a20f250438a",
+        "principalType": "ServicePrincipal",
+        "principalDisplayName": "super-learning-api-dev",
+        "roleDefinitionId": "ba92f5b4-2d11-453d-a403-e96b0029c9fe",
+        "roleDefinitionName": "Storage Blob Data Contributor",
+        "isStorageDataReadRole": true,
+        "condition": "",
+        "conditionVersion": ""
+      },
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "roleAssignmentId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningfuncdevzgme/providers/Microsoft.Authorization/roleAssignments/2e926f88-8336-556c-a3d4-a84428c63e5d",
+        "scope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningfuncdevzgme",
+        "principalId": "8aa615cc-851c-47cf-9faf-3a20f250438a",
+        "principalType": "ServicePrincipal",
+        "principalDisplayName": "super-learning-api-dev",
+        "roleDefinitionId": "ba92f5b4-2d11-453d-a403-e96b0029c9fe",
+        "roleDefinitionName": "Storage Blob Data Contributor",
+        "isStorageDataReadRole": true,
+        "condition": "",
+        "conditionVersion": ""
+      }
+    ],
+    "coAssignedRoleCandidates": [
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "roleAssignmentId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc/providers/Microsoft.Authorization/roleAssignments/4a3502a8-6159-5f07-b55a-954720457278",
+        "scope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+        "principalId": "ed155e1e-d619-4ced-aeb0-c19d786d5d9b",
+        "principalType": "Unknown",
+        "principalName": "",
+        "principalDisplayName": "",
+        "roleDefinitionId": "974c5e8b-45b9-4653-ba55-5f855dd0fb88",
+        "roleDefinitionName": "Storage Queue Data Contributor",
+        "isStorageDataReadRole": true
+      },
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "roleAssignmentId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc/providers/Microsoft.Authorization/roleAssignments/e44b4989-d7eb-5371-a445-a383595badbf",
+        "scope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+        "principalId": "9307c37e-4c96-45b2-864e-3090269bae7a",
+        "principalType": "Unknown",
+        "principalName": "",
+        "principalDisplayName": "",
+        "roleDefinitionId": "974c5e8b-45b9-4653-ba55-5f855dd0fb88",
+        "roleDefinitionName": "Storage Queue Data Contributor",
+        "isStorageDataReadRole": true
+      },
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "roleAssignmentId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc/providers/Microsoft.Authorization/roleAssignments/28b80ee7-22c3-5434-b387-00ec2edc4883",
+        "scope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+        "principalId": "6c6af5a9-77d7-4c8b-ba19-56c9a0040541",
+        "principalType": "Unknown",
+        "principalName": "",
+        "principalDisplayName": "",
+        "roleDefinitionId": "974c5e8b-45b9-4653-ba55-5f855dd0fb88",
+        "roleDefinitionName": "Storage Queue Data Contributor",
+        "isStorageDataReadRole": true
+      },
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "roleAssignmentId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc/providers/Microsoft.Authorization/roleAssignments/5ce702d5-cb83-5786-a18e-876c5d5bfd17",
+        "scope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+        "principalId": "9be9c973-d8f1-4f79-95cf-a073134dc290",
+        "principalType": "Unknown",
+        "principalName": "",
+        "principalDisplayName": "",
+        "roleDefinitionId": "974c5e8b-45b9-4653-ba55-5f855dd0fb88",
+        "roleDefinitionName": "Storage Queue Data Contributor",
+        "isStorageDataReadRole": true
+      },
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "roleAssignmentId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc/providers/Microsoft.Authorization/roleAssignments/6870d0c9-8cdd-5a30-8f05-fe3ce2741710",
+        "scope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+        "principalId": "48ad1c15-17f0-4bf7-bdcd-2035568fe413",
+        "principalType": "Unknown",
+        "principalName": "",
+        "principalDisplayName": "",
+        "roleDefinitionId": "974c5e8b-45b9-4653-ba55-5f855dd0fb88",
+        "roleDefinitionName": "Storage Queue Data Contributor",
+        "isStorageDataReadRole": true
+      },
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "roleAssignmentId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc/providers/Microsoft.Authorization/roleAssignments/d0b2678c-92e5-56de-bc33-adc850a3cc1f",
+        "scope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+        "principalId": "31b109c6-6aa2-4cba-84c6-879bb3d8656e",
+        "principalType": "Unknown",
+        "principalName": "",
+        "principalDisplayName": "",
+        "roleDefinitionId": "974c5e8b-45b9-4653-ba55-5f855dd0fb88",
+        "roleDefinitionName": "Storage Queue Data Contributor",
+        "isStorageDataReadRole": true
+      },
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "roleAssignmentId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc/providers/Microsoft.Authorization/roleAssignments/4b591c2a-2471-55bc-9cde-41699fab9754",
+        "scope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+        "principalId": "d8e285f1-c6b5-4987-9edd-2f13b6606fba",
+        "principalType": "Unknown",
+        "principalName": "",
+        "principalDisplayName": "",
+        "roleDefinitionId": "974c5e8b-45b9-4653-ba55-5f855dd0fb88",
+        "roleDefinitionName": "Storage Queue Data Contributor",
+        "isStorageDataReadRole": true
+      },
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "roleAssignmentId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc/providers/Microsoft.Authorization/roleAssignments/06981585-e8ad-4689-a0c3-e80454decb96",
+        "scope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+        "principalId": "258cf528-a22e-424c-a429-875f06e6fb9f",
+        "principalType": "User",
+        "principalName": "konrad_soft4pm.com#EXT#@konradsoft4pm.onmicrosoft.com",
+        "principalDisplayName": "Konrad Zawadka",
+        "roleDefinitionId": "974c5e8b-45b9-4653-ba55-5f855dd0fb88",
+        "roleDefinitionName": "Storage Queue Data Contributor",
+        "isStorageDataReadRole": true
+      },
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "roleAssignmentId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc/providers/Microsoft.Authorization/roleAssignments/940b6ac6-a239-4bbb-b905-9e6dc7e82915",
+        "scope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+        "principalId": "8842640c-37c7-4405-a924-59b2c388ba99",
+        "principalType": "ServicePrincipal",
+        "principalName": "",
+        "principalDisplayName": "le-gen-local-sp-20260312080201",
+        "roleDefinitionId": "974c5e8b-45b9-4653-ba55-5f855dd0fb88",
+        "roleDefinitionName": "Storage Queue Data Contributor",
+        "isStorageDataReadRole": true
+      },
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "roleAssignmentId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc/providers/Microsoft.Authorization/roleAssignments/eb0a757c-bf7f-5c2a-becc-f9b8fc796957",
+        "scope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+        "principalId": "725515da-bed4-428c-9b22-b133aa216f22",
+        "principalType": "ServicePrincipal",
+        "principalName": "",
+        "principalDisplayName": "superlearningg-queue-kv-mi-dev",
+        "roleDefinitionId": "974c5e8b-45b9-4653-ba55-5f855dd0fb88",
+        "roleDefinitionName": "Storage Queue Data Contributor",
+        "isStorageDataReadRole": true
+      }
+    ],
+    "resourceDependencies": [
+      {
+        "dependencyType": "Resource",
+        "resourceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-chrome-plugin-ENV/providers/Microsoft.Storage/storageAccounts/superlearningcrx",
+        "resourceName": "superlearningcrx",
+        "resourceGroup": "super-learning-chrome-plugin-ENV",
+        "resourceType": "Microsoft.Storage/storageAccounts",
+        "location": "westeurope",
+        "tags": {}
+      },
+      {
+        "dependencyType": "Resource",
+        "resourceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-chrome-plugin-env/providers/Microsoft.Storage/storageAccounts/superlearningcrxenv",
+        "resourceName": "superlearningcrxenv",
+        "resourceGroup": "super-learning-chrome-plugin-env",
+        "resourceType": "Microsoft.Storage/storageAccounts",
+        "location": "westeurope",
+        "tags": {}
+      },
+      {
+        "dependencyType": "Resource",
+        "resourceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+        "resourceName": "superlearningdevzgmelc",
+        "resourceGroup": "super-learning-rg-dev",
+        "resourceType": "Microsoft.Storage/storageAccounts",
+        "location": "westeurope",
+        "tags": {
+          "Environment": "Development",
+          "Application": "SuperLearning",
+          "ManagedBy": "Bicep",
+          "repoName": "super-learning-backend"
+        }
+      },
+      {
+        "dependencyType": "Resource",
+        "resourceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningfuncdevzgme",
+        "resourceName": "superlearningfuncdevzgme",
+        "resourceGroup": "super-learning-rg-dev",
+        "resourceType": "Microsoft.Storage/storageAccounts",
+        "location": "westeurope",
+        "tags": {
+          "Environment": "Development",
+          "Application": "SuperLearning",
+          "ManagedBy": "Bicep",
+          "repoName": "super-learning-backend"
+        }
+      }
+    ],
+    "activityEvidence": [],
+    "rbacScopeActivityEvidence": [
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "rbacScope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-chrome-plugin-ENV/providers/Microsoft.Storage/storageAccounts/superlearningcrx",
+        "rbacRoleDefinitionName": "Storage Blob Data Reader",
+        "eventTimestamp": "08/17/2026 11:02:05",
+        "caller": "konrad@soft4pm.com",
+        "callerObjectId": "258cf528-a22e-424c-a429-875f06e6fb9f",
+        "callerAppId": "e0001ebd-e920-49b8-a27e-92e573ec0af6",
+        "callerName": "Konrad Zawadka",
+        "callerTenantId": "655ccf7b-6f5b-4110-86e3-45c4b8ffc39a",
+        "operationName": "List Storage Account Keys",
+        "operationNameValue": "Microsoft.Storage/storageAccounts/listKeys/action",
+        "status": "Succeeded",
+        "resourceGroupName": "super-learning-chrome-plugin-ENV",
+        "resourceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-chrome-plugin-ENV/providers/Microsoft.Storage/storageAccounts/superlearningcrx",
+        "resourceType": "@{value=Microsoft.Storage/storageAccounts; localizedValue=Microsoft.Storage/storageAccounts}",
+        "authorizationAction": "Microsoft.Storage/storageAccounts/listKeys/action",
+        "authorizationScope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-chrome-plugin-ENV/providers/Microsoft.Storage/storageAccounts/superlearningcrx",
+        "matchesInspectedServicePrincipal": false,
+        "evidenceConfidence": "low",
+        "evidenceReason": "Activity logs show management-plane operations under an RBAC scope assigned to the inspected service principal; this is access context, not ownership proof."
+      },
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "rbacScope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-chrome-plugin-ENV/providers/Microsoft.Storage/storageAccounts/superlearningcrx",
+        "rbacRoleDefinitionName": "Storage Blob Data Reader",
+        "eventTimestamp": "08/17/2026 11:02:05",
+        "caller": "konrad@soft4pm.com",
+        "callerObjectId": "258cf528-a22e-424c-a429-875f06e6fb9f",
+        "callerAppId": "e0001ebd-e920-49b8-a27e-92e573ec0af6",
+        "callerName": "Konrad Zawadka",
+        "callerTenantId": "655ccf7b-6f5b-4110-86e3-45c4b8ffc39a",
+        "operationName": "List Storage Account Keys",
+        "operationNameValue": "Microsoft.Storage/storageAccounts/listKeys/action",
+        "status": "Started",
+        "resourceGroupName": "super-learning-chrome-plugin-ENV",
+        "resourceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-chrome-plugin-ENV/providers/Microsoft.Storage/storageAccounts/superlearningcrx",
+        "resourceType": "@{value=Microsoft.Storage/storageAccounts; localizedValue=Microsoft.Storage/storageAccounts}",
+        "authorizationAction": "Microsoft.Storage/storageAccounts/listKeys/action",
+        "authorizationScope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-chrome-plugin-ENV/providers/Microsoft.Storage/storageAccounts/superlearningcrx",
+        "matchesInspectedServicePrincipal": false,
+        "evidenceConfidence": "low",
+        "evidenceReason": "Activity logs show management-plane operations under an RBAC scope assigned to the inspected service principal; this is access context, not ownership proof."
+      },
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "rbacScope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-chrome-plugin-env/providers/Microsoft.Storage/storageAccounts/superlearningcrxenv",
+        "rbacRoleDefinitionName": "Storage Blob Data Reader",
+        "eventTimestamp": "08/17/2026 11:02:11",
+        "caller": "konrad@soft4pm.com",
+        "callerObjectId": "258cf528-a22e-424c-a429-875f06e6fb9f",
+        "callerAppId": "e0001ebd-e920-49b8-a27e-92e573ec0af6",
+        "callerName": "Konrad Zawadka",
+        "callerTenantId": "655ccf7b-6f5b-4110-86e3-45c4b8ffc39a",
+        "operationName": "List Storage Account Keys",
+        "operationNameValue": "Microsoft.Storage/storageAccounts/listKeys/action",
+        "status": "Succeeded",
+        "resourceGroupName": "super-learning-chrome-plugin-env",
+        "resourceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-chrome-plugin-env/providers/Microsoft.Storage/storageAccounts/superlearningcrxenv",
+        "resourceType": "@{value=Microsoft.Storage/storageAccounts; localizedValue=Microsoft.Storage/storageAccounts}",
+        "authorizationAction": "Microsoft.Storage/storageAccounts/listKeys/action",
+        "authorizationScope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-chrome-plugin-env/providers/Microsoft.Storage/storageAccounts/superlearningcrxenv",
+        "matchesInspectedServicePrincipal": false,
+        "evidenceConfidence": "low",
+        "evidenceReason": "Activity logs show management-plane operations under an RBAC scope assigned to the inspected service principal; this is access context, not ownership proof."
+      },
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "rbacScope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-chrome-plugin-env/providers/Microsoft.Storage/storageAccounts/superlearningcrxenv",
+        "rbacRoleDefinitionName": "Storage Blob Data Reader",
+        "eventTimestamp": "08/17/2026 11:02:11",
+        "caller": "konrad@soft4pm.com",
+        "callerObjectId": "258cf528-a22e-424c-a429-875f06e6fb9f",
+        "callerAppId": "e0001ebd-e920-49b8-a27e-92e573ec0af6",
+        "callerName": "Konrad Zawadka",
+        "callerTenantId": "655ccf7b-6f5b-4110-86e3-45c4b8ffc39a",
+        "operationName": "List Storage Account Keys",
+        "operationNameValue": "Microsoft.Storage/storageAccounts/listKeys/action",
+        "status": "Started",
+        "resourceGroupName": "super-learning-chrome-plugin-env",
+        "resourceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-chrome-plugin-env/providers/Microsoft.Storage/storageAccounts/superlearningcrxenv",
+        "resourceType": "@{value=Microsoft.Storage/storageAccounts; localizedValue=Microsoft.Storage/storageAccounts}",
+        "authorizationAction": "Microsoft.Storage/storageAccounts/listKeys/action",
+        "authorizationScope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-chrome-plugin-env/providers/Microsoft.Storage/storageAccounts/superlearningcrxenv",
+        "matchesInspectedServicePrincipal": false,
+        "evidenceConfidence": "low",
+        "evidenceReason": "Activity logs show management-plane operations under an RBAC scope assigned to the inspected service principal; this is access context, not ownership proof."
+      },
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "rbacScope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+        "rbacRoleDefinitionName": "Storage Blob Data Contributor",
+        "eventTimestamp": "08/17/2026 11:02:30",
+        "caller": "konrad@soft4pm.com",
+        "callerObjectId": "258cf528-a22e-424c-a429-875f06e6fb9f",
+        "callerAppId": "e0001ebd-e920-49b8-a27e-92e573ec0af6",
+        "callerName": "Konrad Zawadka",
+        "callerTenantId": "655ccf7b-6f5b-4110-86e3-45c4b8ffc39a",
+        "operationName": "List Storage Account Keys",
+        "operationNameValue": "Microsoft.Storage/storageAccounts/listKeys/action",
+        "status": "Succeeded",
+        "resourceGroupName": "super-learning-rg-dev",
+        "resourceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+        "resourceType": "@{value=Microsoft.Storage/storageAccounts; localizedValue=Microsoft.Storage/storageAccounts}",
+        "authorizationAction": "Microsoft.Storage/storageAccounts/listKeys/action",
+        "authorizationScope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+        "matchesInspectedServicePrincipal": false,
+        "evidenceConfidence": "low",
+        "evidenceReason": "Activity logs show management-plane operations under an RBAC scope assigned to the inspected service principal; this is access context, not ownership proof."
+      },
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "rbacScope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+        "rbacRoleDefinitionName": "Storage Blob Data Contributor",
+        "eventTimestamp": "08/17/2026 11:02:30",
+        "caller": "konrad@soft4pm.com",
+        "callerObjectId": "258cf528-a22e-424c-a429-875f06e6fb9f",
+        "callerAppId": "e0001ebd-e920-49b8-a27e-92e573ec0af6",
+        "callerName": "Konrad Zawadka",
+        "callerTenantId": "655ccf7b-6f5b-4110-86e3-45c4b8ffc39a",
+        "operationName": "List Storage Account Keys",
+        "operationNameValue": "Microsoft.Storage/storageAccounts/listKeys/action",
+        "status": "Started",
+        "resourceGroupName": "super-learning-rg-dev",
+        "resourceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+        "resourceType": "@{value=Microsoft.Storage/storageAccounts; localizedValue=Microsoft.Storage/storageAccounts}",
+        "authorizationAction": "Microsoft.Storage/storageAccounts/listKeys/action",
+        "authorizationScope": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+        "matchesInspectedServicePrincipal": false,
+        "evidenceConfidence": "low",
+        "evidenceReason": "Activity logs show management-plane operations under an RBAC scope assigned to the inspected service principal; this is access context, not ownership proof."
+      }
+    ],
+    "rbacScopeActivityCallers": [
+      {
+        "callerKey": "object:258cf528-a22e-424c-a429-875f06e6fb9f",
+        "caller": "konrad@soft4pm.com",
+        "callerObjectId": "258cf528-a22e-424c-a429-875f06e6fb9f",
+        "callerAppId": "e0001ebd-e920-49b8-a27e-92e573ec0af6",
+        "callerName": "Konrad Zawadka",
+        "callerTenantId": "655ccf7b-6f5b-4110-86e3-45c4b8ffc39a",
+        "eventCount": 6,
+        "firstSeen": "08/17/2026 11:02:05",
+        "lastSeen": "08/17/2026 11:02:30",
+        "subscriptions": [
+          "Test"
+        ],
+        "rbacScopes": [
+          "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-chrome-plugin-ENV/providers/Microsoft.Storage/storageAccounts/superlearningcrx",
+          "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-chrome-plugin-env/providers/Microsoft.Storage/storageAccounts/superlearningcrxenv",
+          "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc"
+        ],
+        "resourceIds": [
+          "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-chrome-plugin-ENV/providers/Microsoft.Storage/storageAccounts/superlearningcrx",
+          "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-chrome-plugin-env/providers/Microsoft.Storage/storageAccounts/superlearningcrxenv",
+          "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc"
+        ],
+        "operationNames": [
+          "Microsoft.Storage/storageAccounts/listKeys/action"
+        ],
+        "matchesInspectedServicePrincipal": false,
+        "evidenceConfidence": "low",
+        "evidenceReason": "Caller performed recent management-plane operations under one or more RBAC scopes assigned to the inspected service principal."
+      }
+    ],
+    "activityDiagnosticSettings": [
+      {
+        "subscriptionId": "7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "subscriptionName": "Test",
+        "resourceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+        "status": "LogAnalytics",
+        "activityLogEnabled": true,
+        "logAnalyticsEnabled": true,
+        "diagnosticSettingNames": [
+          "send_to_loganalytics"
+        ],
+        "workspaceIds": [
+          "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/defaultresourcegroup-weu/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-7e7963c6-cddc-4d64-bcdd-1bfb727a05c2-WEU"
+        ],
+        "storageAccountIds": [],
+        "eventHubAuthorizationRuleIds": [],
+        "marketplacePartnerIds": []
+      }
+    ],
+    "storageAccountsWithRbac": [
+      {
+        "resourceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-chrome-plugin-ENV/providers/Microsoft.Storage/storageAccounts/superlearningcrx",
+        "name": "superlearningcrx",
+        "resourceGroup": "super-learning-chrome-plugin-ENV",
+        "location": "westeurope",
+        "dataPlaneReadServices": [
+          "Blob"
+        ],
+        "dataPlaneReadRoleNames": [
+          "Storage Blob Data Reader"
+        ],
+        "rbacScopes": [
+          "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-chrome-plugin-ENV/providers/Microsoft.Storage/storageAccounts/superlearningcrx"
+        ],
+        "diagnosticSettings": [
+          {
+            "service": "Blob",
+            "resourceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-chrome-plugin-ENV/providers/Microsoft.Storage/storageAccounts/superlearningcrx/blobServices/default",
+            "status": "LogAnalytics",
+            "dataAccessLogEnabled": true,
+            "logAnalyticsEnabled": true,
+            "diagnosticSettingNames": [
+              "ownerlens-blob-read-logs"
+            ],
+            "workspaceIds": [
+              "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/defaultresourcegroup-weu/providers/microsoft.operationalinsights/workspaces/defaultworkspace-7e7963c6-cddc-4d64-bcdd-1bfb727a05c2-weu"
+            ]
+          }
+        ],
+        "diagnosticLogEnabled": true,
+        "diagnosticLogAnalyticsEnabled": true,
+        "dataAccessVerificationStatus": "QueryableInLogAnalytics",
+        "dataAccessVerificationReason": "Data-plane diagnostic logs are enabled to Log Analytics for every storage service covered by the inspected RBAC roles."
+      },
+      {
+        "resourceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-chrome-plugin-env/providers/Microsoft.Storage/storageAccounts/superlearningcrxenv",
+        "name": "superlearningcrxenv",
+        "resourceGroup": "super-learning-chrome-plugin-env",
+        "location": "westeurope",
+        "dataPlaneReadServices": [
+          "Blob"
+        ],
+        "dataPlaneReadRoleNames": [
+          "Storage Blob Data Reader"
+        ],
+        "rbacScopes": [
+          "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-chrome-plugin-env/providers/Microsoft.Storage/storageAccounts/superlearningcrxenv"
+        ],
+        "diagnosticSettings": [
+          {
+            "service": "Blob",
+            "resourceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-chrome-plugin-env/providers/Microsoft.Storage/storageAccounts/superlearningcrxenv/blobServices/default",
+            "status": "LogAnalytics",
+            "dataAccessLogEnabled": true,
+            "logAnalyticsEnabled": true,
+            "diagnosticSettingNames": [
+              "ownerlens-blob-read-logs"
+            ],
+            "workspaceIds": [
+              "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/defaultresourcegroup-weu/providers/microsoft.operationalinsights/workspaces/defaultworkspace-7e7963c6-cddc-4d64-bcdd-1bfb727a05c2-weu"
+            ]
+          }
+        ],
+        "diagnosticLogEnabled": true,
+        "diagnosticLogAnalyticsEnabled": true,
+        "dataAccessVerificationStatus": "QueryableInLogAnalytics",
+        "dataAccessVerificationReason": "Data-plane diagnostic logs are enabled to Log Analytics for every storage service covered by the inspected RBAC roles."
+      },
+      {
+        "resourceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+        "name": "superlearningdevzgmelc",
+        "resourceGroup": "super-learning-rg-dev",
+        "location": "westeurope",
+        "dataPlaneReadServices": [
+          "Blob"
+        ],
+        "dataPlaneReadRoleNames": [
+          "Storage Blob Data Contributor"
+        ],
+        "rbacScopes": [
+          "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc"
+        ],
+        "diagnosticSettings": [
+          {
+            "service": "Blob",
+            "resourceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc/blobServices/default",
+            "status": "LogAnalytics",
+            "dataAccessLogEnabled": true,
+            "logAnalyticsEnabled": true,
+            "diagnosticSettingNames": [
+              "ownerlens-blob-read-logs"
+            ],
+            "workspaceIds": [
+              "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/defaultresourcegroup-weu/providers/microsoft.operationalinsights/workspaces/defaultworkspace-7e7963c6-cddc-4d64-bcdd-1bfb727a05c2-weu"
+            ]
+          }
+        ],
+        "diagnosticLogEnabled": true,
+        "diagnosticLogAnalyticsEnabled": true,
+        "dataAccessVerificationStatus": "QueryableInLogAnalytics",
+        "dataAccessVerificationReason": "Data-plane diagnostic logs are enabled to Log Analytics for every storage service covered by the inspected RBAC roles."
+      },
+      {
+        "resourceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningfuncdevzgme",
+        "name": "superlearningfuncdevzgme",
+        "resourceGroup": "super-learning-rg-dev",
+        "location": "westeurope",
+        "dataPlaneReadServices": [
+          "Blob"
+        ],
+        "dataPlaneReadRoleNames": [
+          "Storage Blob Data Contributor"
+        ],
+        "rbacScopes": [
+          "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningfuncdevzgme"
+        ],
+        "diagnosticSettings": [
+          {
+            "service": "Blob",
+            "resourceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningfuncdevzgme/blobServices/default",
+            "status": "LogAnalytics",
+            "dataAccessLogEnabled": true,
+            "logAnalyticsEnabled": true,
+            "diagnosticSettingNames": [
+              "ownerlens-blob-read-logs"
+            ],
+            "workspaceIds": [
+              "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/defaultresourcegroup-weu/providers/microsoft.operationalinsights/workspaces/defaultworkspace-7e7963c6-cddc-4d64-bcdd-1bfb727a05c2-weu"
+            ]
+          }
+        ],
+        "diagnosticLogEnabled": true,
+        "diagnosticLogAnalyticsEnabled": true,
+        "dataAccessVerificationStatus": "QueryableInLogAnalytics",
+        "dataAccessVerificationReason": "Data-plane diagnostic logs are enabled to Log Analytics for every storage service covered by the inspected RBAC roles."
+      }
+    ],
+    "blobReadEvidence": [],
+    "blobReadCallers": [],
+    "blobReadObjects": []
+  },
+  "graph": {
+    "owners": [],
+    "appRoleAssignments": [],
+    "oauth2PermissionGrants": [],
+    "memberOf": [],
+    "resourceServicePrincipals": [],
+    "userSignIns": []
+  },
+  "notes": [
+    "Azure RBAC scopes show where the Enterprise Application service principal has assigned access.",
+    "Azure Monitor activity evidence is low-confidence usage evidence from the selected activity window; it is not proof of ownership.",
+    "Azure RBAC scope activity callers show recent management-plane activity under scopes where the Enterprise Application service principal has RBAC; data-plane access requires resource diagnostic logs.",
+    "Storage account sections include only accounts where the Enterprise Application service principal has Storage Blob/Table/Queue data-plane read access, not accounts visible only through management-plane metadata access.",
+    "Storage diagnostic status is checked on the Blob/Table/Queue service resources covered by the assigned data-plane RBAC roles.",
+    "Azure blob data-plane evidence is available only when -LogAnalyticsWorkspaceId points to a workspace that receives StorageBlobLogs from the relevant storage accounts.",
+    "Microsoft Graph user sign-ins are loaded only when -SignInUser is provided and require AuditLog.Read.All plus tenant sign-in log retention for the selected ActivityDays window.",
+    "Microsoft Graph app role assignments and delegated permission grants show API dependencies."
+  ],
+  "ownerCandidates": [
+    {
+      "candidate": "konrad_soft4pm.com#EXT#@konradsoft4pm.onmicrosoft.com",
+      "candidateType": "User",
+      "confidence": "MED",
+      "relationship": "Indirect",
+      "signal": "RBAC",
+      "evidenceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+      "evidenceSource": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+      "evidenceValue": "Storage Queue Data Contributor",
+      "reason": "This principal has Azure RBAC on the same scope as the inspected service principal."
+    },
+    {
+      "candidate": "konrad@soft4pm.com",
+      "candidateType": "User",
+      "confidence": "LOW",
+      "relationship": "Indirect",
+      "signal": "LOG",
+      "evidenceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-chrome-plugin-ENV/providers/Microsoft.Storage/storageAccounts/superlearningcrx",
+      "evidenceSource": "AzureActivity",
+      "evidenceValue": "events=6,lastSeen=08/17/2026 11:02:30",
+      "reason": "Recent Azure RBAC scope activity was performed by this principal under a scope where the inspected service principal has RBAC."
+    },
+    {
+      "candidate": "le-gen-local-sp-20260312080201",
+      "candidateType": "ServicePrincipal",
+      "confidence": "LOW",
+      "relationship": "Indirect",
+      "signal": "RBAC",
+      "evidenceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+      "evidenceSource": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourceGroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+      "evidenceValue": "Storage Queue Data Contributor",
+      "reason": "This principal has Azure RBAC on the same scope as the inspected service principal."
+    },
+    {
+      "candidate": "superlearningg-queue-kv-mi-dev",
+      "candidateType": "ServicePrincipal",
+      "confidence": "LOW",
+      "relationship": "Indirect",
+      "signal": "RBAC",
+      "evidenceId": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+      "evidenceSource": "/subscriptions/7e7963c6-cddc-4d64-bcdd-1bfb727a05c2/resourcegroups/super-learning-rg-dev/providers/Microsoft.Storage/storageAccounts/superlearningdevzgmelc",
+      "evidenceValue": "Storage Queue Data Contributor",
+      "reason": "This principal has Azure RBAC on the same scope as the inspected service principal."
+    }
+  ]
+}
