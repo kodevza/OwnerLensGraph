@@ -102,10 +102,14 @@ export default function App() {
           {!model ? (
             <div className="empty-state">
               <div className="empty-icon">◎</div>
-              <h1>Load an OwnerLens JSON report</h1>
-              <p>The JSON is parsed locally into <code>GraphNode</code> and <code>GraphEdge</code> objects.</p>
+              <h1>Load an OwnerLensLite JSON report</h1>
+              <p>First, install the local <a href="https://github.com/kodevza/OwnerLensLite" target="_blank" rel="noreferrer">OwnerLensLite</a> tool in PowerShell 7+:</p>
+              <code className="command">Install-Module OwnerLensLite -Scope CurrentUser</code>
+              <p>Then create a report for the Enterprise Application and save the output as JSON. Use its service-principal object ID, app ID, or exact display name:</p>
+              <code className="command">Invoke-OwnerLensLite -EnterpriseApplication &quot;&lt;service-principal-object-id-or-app-id-or-exact-display-name&gt;&quot; -OutputPath &quot;./reports/ownerlens.json&quot;</code>
+              <p>When the command finishes, select <code>./reports/ownerlens.json</code> below. The report is processed locally in your browser.</p>
               <Button size="lg" onClick={openFile}><Upload aria-hidden="true" size={17} />Load JSON file</Button>
-              <p className="hint">Sample: <code>examples/ownerlens-sample.json</code></p>
+              <p className="hint">Sample report: <code>examples/ownerlens-sample.json</code></p>
             </div>
           ) : (
             <GraphView
