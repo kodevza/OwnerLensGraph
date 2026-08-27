@@ -16,6 +16,9 @@ coverage/
 *.p12
 *.pfx
 
+# Local infrastructure templates
+infra/*.local.bicep
+
 # Logs
 *.log
 npm-debug.log*

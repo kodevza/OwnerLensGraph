@@ -1,18 +1,26 @@
 import type { GraphNode } from './GraphNode';
 
+const iconPath = (path: string): string => {
+  // Icons live in Vite's `public` directory. Resolve them from the page URL so
+  // they also work when the application is hosted under a GitHub Pages project
+  // path (for example `/OwnerLensGraph/`).
+  if (typeof document === 'undefined') return `/icons/azure/${path}`;
+  return new URL(`icons/azure/${path}`, document.baseURI).pathname;
+};
+
 export class IconResolver {
   static readonly icons = {
-    managedIdentity: '/icons/azure/identity/10227-icon-service-Entra-Managed-Identities.svg',
-    enterpriseApplication: '/icons/azure/identity/10225-icon-service-Enterprise-Applications.svg',
-    storageAccount: '/icons/azure/storage/10086-icon-service-Storage-Accounts.svg',
-    user: '/icons/azure/identity/10230-icon-service-Users.svg',
-    group: '/icons/azure/identity/10223-icon-service-Groups.svg',
-    subscription: '/icons/azure/general/10002-icon-service-Subscriptions.svg',
-    resourceGroup: '/icons/azure/general/10007-icon-service-Resource-Groups.svg',
-    agent: '/icons/azure/ai + machine learning/038470523-icon-service-Foundry-Agent-Service.svg',
-    allResources: '/icons/azure/general/10001-icon-service-All-Resources.svg',
-    functionApp: '/icons/azure/compute/10029-icon-service-Function-Apps.svg',
-    keyVault: '/icons/azure/security/10245-icon-service-Key-Vaults.svg'
+    managedIdentity: iconPath('identity/10227-icon-service-Entra-Managed-Identities.svg'),
+    enterpriseApplication: iconPath('identity/10225-icon-service-Enterprise-Applications.svg'),
+    storageAccount: iconPath('storage/10086-icon-service-Storage-Accounts.svg'),
+    user: iconPath('identity/10230-icon-service-Users.svg'),
+    group: iconPath('identity/10223-icon-service-Groups.svg'),
+    subscription: iconPath('general/10002-icon-service-Subscriptions.svg'),
+    resourceGroup: iconPath('general/10007-icon-service-Resource-Groups.svg'),
+    agent: iconPath('ai + machine learning/038470523-icon-service-Foundry-Agent-Service.svg'),
+    allResources: iconPath('general/10001-icon-service-All-Resources.svg'),
+    functionApp: iconPath('compute/10029-icon-service-Function-Apps.svg'),
+    keyVault: iconPath('security/10245-icon-service-Key-Vaults.svg')
   } as const;
 
   resolve(node: GraphNode, rootId?: string): string {

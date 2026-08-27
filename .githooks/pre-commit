@@ -3,14 +3,16 @@
 
 set -eu
 
-if ! command -v gitleaks >/dev/null 2>&1; then
-  echo "pre-commit: gitleaks is required but was not found on PATH." >&2
-  echo "Install it from https://github.com/gitleaks/gitleaks, then retry." >&2
+if ! command -v docker >/dev/null 2>&1; then
+  echo "pre-commit: Docker is required to run gitleaks." >&2
   exit 1
 fi
 
 echo "pre-commit: scanning staged changes for secrets..."
-gitleaks protect --staged --redact
+docker run --rm \
+  --volume "$(pwd):/repo" \
+  --workdir /repo \
+  zricethezav/gitleaks:latest protect --staged --redact
 
 echo "pre-commit: running tests..."
 npm test
