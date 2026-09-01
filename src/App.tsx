@@ -5,7 +5,18 @@ import { PropertyTable } from './components/PropertyTable';
 import { Badge } from './components/ui/badge';
 import { Button } from './components/ui/button';
 import { GraphEdge, GraphModel, GraphNode, HierarchicalLayout, OwnerLensGraphParser } from './domain';
-import { Eye, EyeOff, Upload } from 'lucide-react';
+import { Check, Copy, Eye, EyeOff, Upload } from 'lucide-react';
+import exampleReport from '../examples/ownerlens-sample.json';
+
+const installCommand = 'Install-Module OwnerLensLite -Scope CurrentUser';
+const reportCommand = 'Invoke-OwnerLensLite -EnterpriseApplication "<service-principal-object-id-or-app-id-or-exact-display-name>" -OutputPath "./reports/ownerlens.json"';
+
+function graphViewportAspectRatio(): number {
+  const isNarrowLayout = window.innerWidth <= 900;
+  const graphWidth = window.innerWidth - (isNarrowLayout ? 0 : 340);
+  const graphHeight = (window.innerHeight - 62) * (isNarrowLayout ? 0.65 : 1);
+  return Math.max(1, graphWidth) / Math.max(1, graphHeight);
+}
 
 export default function App() {
   const fileRef = useRef<HTMLInputElement | null>(null);
@@ -17,6 +28,7 @@ export default function App() {
   const [error, setError] = useState('');
   const [revision, setRevision] = useState(0);
   const [showUnknown, setShowUnknown] = useState(false);
+  const [copiedCommand, setCopiedCommand] = useState<string | null>(null);
 
   const graphStatus = useMemo(() => {
     const nodes = [...(model?.nodes.values() ?? [])];
@@ -30,21 +42,34 @@ export default function App() {
 
   const openFile = () => fileRef.current?.click();
 
-  const loadFile = async (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (!file) return;
+  const copyCommand = async (command: string) => {
+    await navigator.clipboard.writeText(command);
+    setCopiedCommand(command);
+    window.setTimeout(() => setCopiedCommand((current) => current === command ? null : current), 1800);
+  };
+
+  const loadReport = (data: unknown, name: string) => {
     try {
-      const data = JSON.parse(await file.text());
       const next = new OwnerLensGraphParser().parse(data);
-      new HierarchicalLayout().apply(next);
+      new HierarchicalLayout().apply(next, graphViewportAspectRatio());
       setModel(next);
-      setFileName(file.name);
+      setFileName(name);
       setSelectedNode(next.root);
       setSelectedEdge(null);
       setQuery('');
       setShowUnknown(false);
       setError('');
       setRevision((x) => x + 1);
+    } catch (reason) {
+      setError(reason instanceof Error ? reason.message : String(reason));
+    }
+  };
+
+  const loadFile = async (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    try {
+      loadReport(JSON.parse(await file.text()), file.name);
     } catch (reason) {
       setError(reason instanceof Error ? reason.message : String(reason));
     } finally {
@@ -104,12 +129,14 @@ export default function App() {
               <div className="empty-icon">◎</div>
               <h1>Load an OwnerLensLite JSON report</h1>
               <p>First, install the local <a href="https://github.com/kodevza/OwnerLensLite" target="_blank" rel="noreferrer">OwnerLensLite</a> tool in PowerShell 7+:</p>
-              <code className="command">Install-Module OwnerLensLite -Scope CurrentUser</code>
+              <div className="command"><code>{installCommand}</code><button type="button" onClick={() => void copyCommand(installCommand)} aria-label="Copy installation command" title="Copy command">{copiedCommand === installCommand ? <Check aria-hidden="true" size={16} /> : <Copy aria-hidden="true" size={16} />}</button></div>
               <p>Then create a report for the Enterprise Application and save the output as JSON. Use its service-principal object ID, app ID, or exact display name:</p>
-              <code className="command">Invoke-OwnerLensLite -EnterpriseApplication &quot;&lt;service-principal-object-id-or-app-id-or-exact-display-name&gt;&quot; -OutputPath &quot;./reports/ownerlens.json&quot;</code>
+              <div className="command"><code>{reportCommand}</code><button type="button" onClick={() => void copyCommand(reportCommand)} aria-label="Copy report command" title="Copy command">{copiedCommand === reportCommand ? <Check aria-hidden="true" size={16} /> : <Copy aria-hidden="true" size={16} />}</button></div>
               <p>When the command finishes, select <code>./reports/ownerlens.json</code> below. The report is processed locally in your browser.</p>
-              <Button size="lg" onClick={openFile}><Upload aria-hidden="true" size={17} />Load JSON file</Button>
-              <p className="hint">Sample report: <code>examples/ownerlens-sample.json</code></p>
+              <div className="empty-actions">
+                <Button size="lg" onClick={openFile}><Upload aria-hidden="true" size={17} />Load JSON file</Button>
+                <Button size="lg" className="example-button" onClick={() => loadReport(exampleReport, 'ownerlens-sample.json')}>Load example</Button>
+              </div>
             </div>
           ) : (
             <GraphView
