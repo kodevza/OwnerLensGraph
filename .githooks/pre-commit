@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
-# Scans staged changes for secrets, then runs the project's test suite.
+# Scans staged changes for secrets and hardcoded email addresses, then runs
+# the project's test suite.
 
 set -eu
 
@@ -13,6 +14,73 @@ docker run --rm \
   --volume "$(pwd):/repo" \
   --workdir /repo \
   zricethezav/gitleaks:latest protect --staged --redact
+
+email_pattern='[[:alnum:]._%+-]+@[[:alnum:].-]+\.[[:alpha:]][[:alpha:]]+'
+exclusions_file='.githooks/email-exclusions'
+value_exclusions_file='.githooks/email-value-exclusions'
+email_files=$(git diff --cached --name-only --diff-filter=ACMR)
+
+is_excluded() {
+  file=$1
+  [ -f "$exclusions_file" ] || return 1
+
+  while IFS= read -r pattern || [ -n "$pattern" ]; do
+    case "$pattern" in
+      ''|'#'*) continue ;;
+    esac
+    case "$file" in
+      $pattern) return 0 ;;
+    esac
+  done < "$exclusions_file"
+
+  return 1
+}
+
+is_value_excluded() {
+  value=$1
+  [ -f "$value_exclusions_file" ] || return 1
+
+  while IFS= read -r excluded_value || [ -n "$excluded_value" ]; do
+    case "$excluded_value" in
+      ''|'#'*) continue ;;
+    esac
+    [ "$value" = "$excluded_value" ] && return 0
+  done < "$value_exclusions_file"
+
+  return 1
+}
+
+if [ -n "$email_files" ]; then
+  echo "pre-commit: scanning all staged text files for hardcoded email addresses..."
+  found_emails=0
+  while IFS= read -r file; do
+    if is_excluded "$file"; then
+      continue
+    fi
+    if matches=$(git show ":$file" | grep -InE "$email_pattern"); then
+      unexcluded_email_found=0
+      emails=$(printf '%s\n' "$matches" | grep -Eo "$email_pattern" | sort -u)
+      while IFS= read -r email; do
+        if ! is_value_excluded "$email"; then
+          unexcluded_email_found=1
+          break
+        fi
+      done <<EOF
+$emails
+EOF
+      if [ "$unexcluded_email_found" -eq 1 ]; then
+        printf '%s\n' "$matches" | sed "s|^|$file:|"
+        found_emails=1
+      fi
+    fi
+  done <<EOF
+$email_files
+EOF
+  if [ "$found_emails" -eq 1 ]; then
+    echo "pre-commit: hardcoded email address detected. Add an approved path pattern to $exclusions_file or an exact approved value to $value_exclusions_file only when necessary." >&2
+    exit 1
+  fi
+fi
 
 echo "pre-commit: running tests..."
 npm test

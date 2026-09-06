@@ -1,0 +1,3 @@
+# Exact email address values permitted in staged files.
+# Keep this list minimal. One value per line; comments start with #.
+test@example.com

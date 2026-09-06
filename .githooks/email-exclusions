@@ -1,0 +1,4 @@
+# Shell glob patterns for staged files that may contain email addresses.
+# Keep this list minimal. One pattern per line; comments start with #.
+package-lock.json
+*.lock
