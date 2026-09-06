@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { PointerEvent as ReactPointerEvent, WheelEvent as ReactWheelEvent } from 'react';
 import type { GraphEdge, GraphModel, GraphNode } from '../domain';
-import { BookOpenText, Link, LockKeyhole, ShieldCheck, UserRound } from 'lucide-react';
+import { BookOpenText, Link, LockKeyhole, Maximize, ShieldCheck, UserRound } from 'lucide-react';
 import { buildConnections, type EdgeIcon } from './edgePresentation';
+import { measureEdgeLabelBox, placeEdgeLabelBox, type Rect } from './edgeLabelPlacement';
 
 interface GraphViewProps {
   model: GraphModel;
@@ -113,7 +114,9 @@ export function GraphView({ model, selectedNode, selectedEdge, onSelectNode, onS
   }, [model, showUnknown]);
   return (
     <div className="graph-stage">
-      <button className="fit-button" type="button" onClick={fit}>Fit graph</button>
+      <button className="fit-button" type="button" onClick={fit} aria-label="Fit graph to view" title="Fit graph to view">
+        <Maximize size={18} aria-hidden="true" />
+      </button>
       <svg
         ref={svgRef}
         className="graph-svg"
@@ -131,7 +134,10 @@ export function GraphView({ model, selectedNode, selectedEdge, onSelectNode, onS
           </marker>
         </defs>
         <g transform={`translate(${viewport.x} ${viewport.y}) scale(${viewport.scale})`}>
-          {connections.map((connection) => {
+          {(() => {
+            const occupiedLabelRects: Rect[] = [];
+            const nodeObstacles = visibleNodes.map((node) => ({ x: node.x - 62, y: node.y - 44, width: 124, height: 128 }));
+            return connections.map((connection) => {
             const active = connection.edges.some((edge) => selectedEdge?.id === edge.id) || selectedNode?.id === connection.source.id || selectedNode?.id === connection.target.id;
             const dx = connection.target.x - connection.source.x;
             const dy = connection.target.y - connection.source.y;
@@ -142,18 +148,27 @@ export function GraphView({ model, selectedNode, selectedEdge, onSelectNode, onS
             const y1 = connection.source.y + uy * 34;
             const x2 = connection.target.x - ux * 40;
             const y2 = connection.target.y - uy * 40;
-            const cardHeight = connection.items.length * 24 + 8;
+            const { width: cardWidth, height: cardHeight } = measureEdgeLabelBox(connection.items.map((item) => item.text));
+            const edgeObstacles = connections
+              .filter((other) => other.id !== connection.id)
+              .map((other) => ({ start: { x: other.source.x, y: other.source.y }, end: { x: other.target.x, y: other.target.y } }));
+            const labelBox = placeEdgeLabelBox({ x: x1, y: y1 }, { x: x2, y: y2 }, cardWidth, cardHeight, {
+              blockedRects: [...nodeObstacles, ...occupiedLabelRects],
+              blockedSegments: edgeObstacles,
+            });
+            occupiedLabelRects.push(labelBox);
             return (
               <g key={connection.id} className={`edge ${active ? 'active' : ''} ${connection.confidence ? `confidence-${connection.confidence.toLowerCase()}` : ''}`} onPointerDown={(e) => e.stopPropagation()} onClick={() => onSelectEdge(connection.edges[0])}>
                 <line x1={x1} y1={y1} x2={x2} y2={y2} markerEnd="url(#arrow)" />
-                <foreignObject x={(x1 + x2) / 2 - 115} y={(y1 + y2) / 2 - cardHeight / 2} width="230" height={cardHeight}>
+                <foreignObject x={labelBox.x} y={labelBox.y} width={cardWidth} height={cardHeight}>
                   <div className={`edge-label-card ${connection.confidence ? `confidence-${connection.confidence.toLowerCase()}` : ''}`}>
                     {connection.items.map((item) => <ConnectionLine key={`${item.icon}:${item.text}`} item={item} />)}
                   </div>
                 </foreignObject>
               </g>
             );
-          })}
+            });
+          })()}
           {visibleNodes.map((node) => {
             const selected = selectedNode?.id === node.id;
             const dimmed = selectedNode && !highlightedNodeIds.has(node.id);

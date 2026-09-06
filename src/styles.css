@@ -37,14 +37,15 @@ button:hover { background: #20262f; }
 .graph-area { min-height: calc(100vh - 62px); position: relative; overflow: hidden; background: radial-gradient(circle at center, #151b23 0, #0d1117 65%); }
 .graph-stage { width: 100%; height: 100%; min-height: calc(100vh - 62px); position: relative; overflow: hidden; }
 .graph-svg { width: 100%; height: 100%; min-height: calc(100vh - 62px); display: block; touch-action: none; user-select: none; }
-.fit-button { position: absolute; left: 14px; top: 14px; z-index: 3; }
-.edge line { stroke: #657384; stroke-width: 1.8; cursor: pointer; }
-.edge.active line { stroke: rgb(217 154 0 / 75%); stroke-width: 2.8; }
+.fit-button { position: absolute; left: 14px; top: 14px; z-index: 3; display: grid; place-items: center; width: 36px; height: 36px; padding: 0; }
+.edge line { stroke: #657384; stroke-width: 1.8; cursor: pointer; transition: stroke 120ms ease, stroke-width 120ms ease; }
 .edge.confidence-high line { stroke: #4ade80; }
 .edge.confidence-med line { stroke: #60a5fa; }
-.edge-label-card { height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 2px; padding: 0; color: #bdc8d4; background: transparent; border: 0; font: 11px/1.25 Inter, ui-sans-serif, system-ui, sans-serif; overflow: hidden; }
+.edge.active line, .edge:hover line { stroke: rgb(217 154 0 / 75%); stroke-width: 2.8; }
+.edge-label-card { height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 2px; padding: 6px 8px; color: #bdc8d4; background: rgba(16, 21, 28, .96); border: 1px solid #3a4654; border-radius: 7px; box-shadow: 0 3px 12px rgba(0, 0, 0, .22); font: 11px/1.25 Inter, ui-sans-serif, system-ui, sans-serif; overflow: hidden; }
 .edge-label-card.confidence-high { color: #bbf7d0; }
 .edge-label-card.confidence-med { color: #bfdbfe; }
+.edge:hover .edge-label-card { color: rgb(217 154 0 / 75%); }
 .edge-label-line { display: flex; align-items: center; gap: 5px; min-width: 0; white-space: nowrap; }
 .edge-label-line svg { flex: 0 0 auto; }
 .edge-label-line span { overflow: hidden; text-overflow: ellipsis; }
@@ -52,8 +53,8 @@ button:hover { background: #20262f; }
 .arrow-head { fill: #657384; }
 .graph-node { cursor: grab; transition: opacity 120ms ease; }
 .graph-node:active { cursor: grabbing; }
-.graph-node circle { fill: #f7f9fb; stroke: #66717e; stroke-width: 2; }
-.graph-node.selected circle { stroke: rgb(217 154 0 / 75%); stroke-width: 5; }
+.graph-node circle { fill: #f7f9fb; stroke: #66717e; stroke-width: 2; transition: stroke 120ms ease, stroke-width 120ms ease; }
+.graph-node.selected circle, .graph-node:hover circle { stroke: rgb(217 154 0 / 75%); stroke-width: 5; }
 .graph-node.dimmed { opacity: .25; }
 .graph-node image { pointer-events: none; }
 .node-label { fill: #e4e9ef; font-size: 12px; font-weight: 600; pointer-events: none; paint-order: stroke; stroke: #0d1117; stroke-width: 5px; }

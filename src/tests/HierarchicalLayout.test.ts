@@ -32,4 +32,16 @@ describe('HierarchicalLayout', () => {
     expect(children[0].x - root.x).toBeGreaterThan(280);
     expect(children.map((child) => child.y)).toEqual(expect.arrayContaining([-150, -50, 50, 150]));
   });
+
+  test('leaves room for edge labels between adjacent levels', () => {
+    const model = new GraphModel();
+    const root = model.upsertNode('root', 'Root');
+    const child = model.upsertNode('child', 'Child');
+    model.root = root;
+    model.addEdge('root-child', root, child, '', 'relationship');
+
+    new HierarchicalLayout().apply(model);
+
+    expect(child.x - root.x).toBeGreaterThanOrEqual(440);
+  });
 });

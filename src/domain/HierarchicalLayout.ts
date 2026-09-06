@@ -3,7 +3,7 @@ import type { GraphNode } from './GraphNode';
 
 export class HierarchicalLayout {
   constructor(
-    private readonly horizontalSpacing = 280,
+    private readonly horizontalSpacing = 440,
     private readonly verticalSpacing = 100,
   ) {}
 
